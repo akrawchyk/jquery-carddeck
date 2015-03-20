@@ -54,6 +54,7 @@
     return deck;
   }
 
+
   function shuffle(array) {
     var m = array.length, t, i;
 
@@ -94,7 +95,6 @@
 
     init: function () {
       this.shuffle();
-      //this.displayCard( this.deck[0] );
       this.displayDeck();
 
       var shuffleHTML = '<button class="shuffle">shuffle</button>';
@@ -129,10 +129,10 @@
       var rank = card.rank;
       var suit = card.suit;
       var cardHTML =
-        '<div class="card ' + rank.toLowerCase() + ' ' + suit.toLowerCase() + '">' +
-          '<span class="rank">' + rank + '</span>' +
+        '<div class="card card--' + rank.toLowerCase() + ' card--' + suit.toLowerCase() + '">' +
+          '<span class="card__rank">' + rank + '</span>' +
           ' of ' +
-          '<span class="suit">' + suit + '</span>' +
+          '<span class="card__suit">' + suit + '</span>' +
         '</div>';
 
       this.$element.find(selector).append(cardHTML);
